@@ -5,7 +5,9 @@ ENV RUSTUP_HOME=/usr/local/rustup \
     PATH=/usr/local/cargo/bin:$PATH
 RUN apt-get update \
     && apt-get install -y tzdata \
-    && apt-get -y upgrade && apt-get install -y build-essential curl wget git vim libboost-all-dev
+    && apt-get -y upgrade && apt-get install -y build-essential curl wget git vim libboost-all-dev \
+    && wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb \
+    && dpkg -i ./libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
 RUN curl -sL https://deb.nodesource.com/setup_14.x |  bash \
     && apt-get install -y nodejs \
     && npm install -y -g ssvmup --unsafe-perm \
