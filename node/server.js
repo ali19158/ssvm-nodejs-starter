@@ -18,9 +18,10 @@ app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/solve', function (req, res) {
   var a = parseFloat(req.body.a);
-  var b = parseFloat(req.body.b);
-  var c = parseFloat(req.body.c);
-  res.send(solve([a, b, c]))
+  // var b = parseFloat(req.body.b);
+  // var c = parseFloat(req.body.c);
+  //res.send(solve([a, b, c]))
+  res.send(solve(a));
 })
 
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
